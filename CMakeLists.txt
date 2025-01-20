@@ -47,4 +47,4 @@ function(add_subdir_executables base_dir)
 endfunction()
 
 # Add all executables in top-level directories
-# add_subdir_executables(${CMAKE_SOURCE_DIR}/)
+add_subdir_executables(${CMAKE_SOURCE_DIR}/textbook)
