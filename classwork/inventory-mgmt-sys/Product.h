@@ -5,27 +5,36 @@
 
 class Product {
 public:
-    // Constructor
-    Product(const std::string &name, const std::string &description, double price, int quantity);
-
-    // Destructor
-    ~Product();
+    // Constructors
+    Product(int id, const std::string& name, const std::string& description, double price, int quantity);
+    Product(const Product& other); // Copy constructor
+    ~Product(); // Destructor
 
     // Getters
-    int getID() const;
-    std::string getInfo() const;
+    int getProductID() const;
+    std::string getName() const;
+    std::string getDescription() const;
+    double getPrice() const;
+    int getQuantity() const;
 
     // Setters
-    void setQuantity(int newQuantity);
-    void setPrice(double newPrice);
+    void setName(const std::string& name);
+    void setDescription(const std::string& description);
+    void setPrice(double price);
+    void setQuantity(int quantity);
+
+    // Display function
+    void display() const;
+
+    // Assignment operator
+    Product& operator=(const Product& other);
 
 private:
-    int prod_id;
-    std::string prod_name;
-    std::string prod_desc;
-    double prod_price;
-    int prod_quantity{1};
-    static int next_id;
+    int productID;
+    std::string name;
+    std::string description;
+    double price;
+    int quantity;
 };
 
 #endif //PRODUCT_H
